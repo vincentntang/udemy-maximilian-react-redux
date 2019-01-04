@@ -4,11 +4,27 @@ import UserInput from "./components/UserInput";
 import UserOutput from "./components/UserOutput";
 
 class App extends Component {
+  state = {
+    person: [
+      { name: "Max", age: 26 },
+      { name: "Tony", age: 24 },
+      { name: "Mary", age: 21 }
+    ]
+  };
+  handleButton = event => {
+    this.setState({
+      persons: [
+        { name: "Max", age: 28 },
+        { name: event.target.value, age: 29 },
+        { name: "Stephanie", age: 26 }
+      ]
+    });
+  };
   render() {
     return (
       <div className="App">
-        <UserInput />
-        <UserOutput />
+        <UserInput changed={this.handleButton} />
+        <UserOutput name={this.state.person[1].name} />
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>

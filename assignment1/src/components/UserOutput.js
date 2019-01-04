@@ -2,7 +2,8 @@ import React from "react";
 
 const UserOutput = props => (
   <div>
-    <input type="text" />
+    <p>{props.name}</p>
+    <p>Paragraphs Two</p>
   </div>
 );
 
