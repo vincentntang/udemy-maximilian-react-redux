@@ -5,7 +5,7 @@ import UserOutput from "./components/UserOutput";
 
 class App extends Component {
   state = {
-    person: [
+    persons: [
       { name: "Max", age: 26 },
       { name: "Tony", age: 24 },
       { name: "Mary", age: 21 }
@@ -23,8 +23,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserInput changed={this.handleButton} />
-        <UserOutput name={this.state.person[1].name} />
+        <UserInput
+          changed={this.handleButton}
+          currentName={this.state.persons[1].name}
+        />
+        <UserOutput name={this.state.persons[1].name} />
         <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>
