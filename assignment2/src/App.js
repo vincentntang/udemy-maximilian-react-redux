@@ -20,9 +20,10 @@ class App extends Component {
     var regex = new RegExp(char, "g");
     let tempTextInput = this.state.textInput;
     tempTextInput = tempTextInput.replace(regex, "");
-    console.log(char);
-    console.log(tempTextInput);
-    this.setState({});
+
+    this.setState({
+      textInput: tempTextInput
+    });
   };
   render() {
     return (
