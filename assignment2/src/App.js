@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
+import ValidationComponent from "./components/ValidationComponent";
 
 class App extends Component {
+  state = {
+    textInput: ""
+  };
+
+  getInputLength = event => {
+    if (event.target.value.length > 5) {
+    }
+    this.setState({
+      textInput: event.target.value
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -36,7 +48,8 @@ class App extends Component {
           </li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-        <input type="text" />
+        <input type="text" onChange={this.getInputLength} />
+        <ValidationComponent input={this.state.textInput} />
       </div>
     );
   }
