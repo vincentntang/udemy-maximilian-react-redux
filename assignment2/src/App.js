@@ -15,6 +15,9 @@ class App extends Component {
       textInput: event.target.value
     });
   };
+  removeCharFromText = event => {
+    console.log(event);
+  };
   render() {
     return (
       <div className="App">
@@ -49,9 +52,16 @@ class App extends Component {
           </li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-        <input type="text" onChange={this.getInputLength} />
+        <input
+          type="text"
+          onChange={this.getInputLength}
+          value={this.state.textInput}
+        />
         <ValidationComponent input={this.state.textInput} />
-        <CharComponent input={this.state.textInput} />
+        <CharComponent
+          removeCharFromText={this.removeCharFromText}
+          input={this.state.textInput}
+        />
       </div>
     );
   }

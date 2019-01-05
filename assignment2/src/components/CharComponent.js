@@ -2,12 +2,12 @@ import React from "react";
 
 class CharComponent extends React.Component {
   render() {
-    const { input } = this.props;
+    const { input, removeCharFromText } = this.props;
     let charInput = input.split("");
     return (
       <div className="charDisplay">
         {charInput.map(char => {
-          return <p>{char}</p>;
+          return <button onClick={removeCharFromText}>{char}</button>;
         })}
         <style jsx>{`
         .charDisplay {
