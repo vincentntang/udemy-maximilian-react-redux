@@ -6,8 +6,12 @@ class CharComponent extends React.Component {
     let charInput = input.split("");
     return (
       <div className="charDisplay">
-        {charInput.map(char => {
-          return <button onClick={removeCharFromText}>{char}</button>;
+        {charInput.map((char, index) => {
+          return (
+            <p key={index} onClick={() => removeCharFromText(index)}>
+              {char}
+            </p>
+          );
         })}
         <style jsx>{`
         .charDisplay {

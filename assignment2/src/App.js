@@ -15,8 +15,14 @@ class App extends Component {
       textInput: event.target.value
     });
   };
-  removeCharFromText = event => {
-    console.log(event);
+  removeCharFromText = index => {
+    const char = this.state.textInput.split("")[index];
+    var regex = new RegExp(char, "g");
+    let tempTextInput = this.state.textInput;
+    tempTextInput = tempTextInput.replace(regex, "");
+    console.log(char);
+    console.log(tempTextInput);
+    this.setState({});
   };
   render() {
     return (
